@@ -28,17 +28,16 @@ export DEBUG_MODE="true"
 
 export DATA_DIR="<DATA_DIR>"
 export MODEL_DIR="<MODEL_DIR>"
-export MODEL_NAME="<MODEL_NAME>"
+export BIOMEDBERT_PATH="<BIOMEDBERT_PATH>"
 export OUTPUT_DIR="<OUTPUT_DIR>"
 export WANDB_API_KEY="<WANDB_API_KEY>"
 export WANDB_PROJECT="<WANDB_PROJECT>"
 export CUDA_VISIBLE_DEVICES=0,1,2,3
+export PROCESS_REWARD_MODEL="gpt-5-mini"
 
 ### ====================================================================
 
 
-export PROCESS_REWARD_MODEL="gpt-5-mini"
-export BIOMEDBERT_PATH="$MODEL_DIR/BiomedBERT"
 
 
 RUN_NAME="${MODEL_NAME}-MRPO"
@@ -58,7 +57,7 @@ esac
     grpo_vqa_MRPO.py \
     --deepspeed "$DEEPSPEED_CONFIG" \
     --output_dir "$OUTPUT_DIR" \
-    --model_name_or_path "$MODEL_DIR/$MODEL_NAME" \
+    --model_name_or_path "$MODEL_DIR" \
     --train_file "$DATA_DIR/Data_Preprocessed/train_open_ended.json" \
     --test_file "$DATA_DIR/Data_Preprocessed/test_open_ended.json" \
     --gold_reasoning_file "$DATA_DIR/Medthink/medthink_train.json" \
