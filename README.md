@@ -11,6 +11,7 @@
 * [June/30/2026] 🎉 We release our paper "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning" on arXiv.
 
 
+
 ## 📖 Overview
 - MRPO is a novel reinforcement learning framework that improves medical multimodal reasoning by directly addressing failures in the reasoning process. It reshapes GRPO-style advantages using both answer-level and step-wise process rewards, assigning exponentially larger penalties to earlier invalid steps when the final answer is incorrect, thereby correcting early-stage failures before they cascade while preserving successful trajectories. By redistributing the learning signal according to where reasoning first fails, MRPO induces transferable reasoning that improves both reasoning quality and final answer accuracy across diverse medical VQA benchmarks.
 
@@ -18,6 +19,7 @@
 
 ## Key Results
 - On out-of-distribution medical VQA benchmarks, MRPO consistently outperforms standard GRPO and a recent RL baseline across all three backbones, and on Qwen3-VL-8B-Instruct even surpasses substantially larger medical MLLMs like HuatuoGPT-Vision-34B by 2.79 points using only 13K training samples. On step-wise reasoning analysis, MRPO breaks failure cascades by reducing early-stage reasoning failures from 64.0% to 13.0%, showing that targeted mitigation of early failures improves both reasoning quality and final answer accuracy.
+
 
 ### Answer Accuracy Comparison
 
@@ -35,6 +37,7 @@
 ![alt text](assets/reasoning_quality.png)
 
 
+
 ## 🚀 Reproducibility
 To enable reproduction under the same settings as our experiments, we release our full reinforcement learning recipe, including the complete code, datasets, and infrastructure.
 
@@ -46,6 +49,8 @@ We recommend using conda to set up the environment:
 bash install_env.sh
 conda activate mrpo
 ```
+
+---
 
 ### Datasets
 To download and preprocess all datasets used in our experiments, run:
@@ -67,6 +72,7 @@ Each training instance follows the format below, with `image`, `problem`, and `s
 
 If you want to download the datasets individually, the three medical VQA benchmarks can be obtained from their original sources: VQA-RAD from [flaviagiammarino/vqa-rad](https://huggingface.co/datasets/flaviagiammarino/vqa-rad), SLAKE from [BoKelvin/SLAKE](https://huggingface.co/datasets/BoKelvin/SLAKE), and PathVQA from [flaviagiammarino/path-vqa](https://huggingface.co/datasets/flaviagiammarino/path-vqa). The gold reasoning annotations are provided by MedThink, which can be downloaded from [Tang-xiaoxiao/Medthink](https://github.com/Tang-xiaoxiao/Medthink). After downloading, align each MedThink rationale to its corresponding VQA instance to reproduce our training set.
 
+---
 
 ### Training
 Run the training script:
@@ -85,6 +91,7 @@ bash Train_MRPO.sh
 
 We currently support training on Qwen2.5-VL, Qwen3-VL, and InternVL3. The `<MODEL_DIR>` path must contain the corresponding model name (i.e., `qwen2.5-vl`, `qwen3-vl`, or `internvl3`).
 
+---
 
 ### Inference
 Run the inference script:
@@ -98,6 +105,7 @@ python inference.py \
 ```
 After running `Download_dataset.py`, the test set is available at `<DATA_DIR>/Data_Preprocessed/test_open_ended.json`, which can be passed directly to `--test_json`. The test data must follow the same format as the training data, with each instance containing the `image`, `problem`, and `solution` keys.
 
+---
 
 ### Evaluation
 We provide two evaluation protocols, both using GPT-5-mini as an LLM judge. **Answer correctness** assesses whether the generated answer matches the ground-truth answer, reported as the proportion of examples judged correct. **Reasoning evaluation** assesses step-wise reasoning quality by scoring each reasoning step as valid or invalid against the gold reasoning trajectory.
