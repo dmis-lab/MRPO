@@ -39,7 +39,7 @@ export PROCESS_REWARD_MODEL="gpt-5-mini"
 
 
 
-
+MODEL_NAME="$(basename "$MODEL_DIR")"
 RUN_NAME="${MODEL_NAME}-MRPO"
 export LOG_PATH="./debug_log_$RUN_NAME.txt"
 
