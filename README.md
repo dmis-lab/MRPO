@@ -8,6 +8,7 @@
 
 
 ### News
+* [August/21/2026] 🎉 MRPO is accepted to EMNLP 2026! Congrats to all the authors!.
 * [June/30/2026] 🎉 We release our paper "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning" on arXiv.
 
 
@@ -18,7 +19,7 @@
 ![alt text](assets/MRPO_overview.png)
 
 ## Key Results
-- On out-of-distribution medical VQA benchmarks, MRPO consistently outperforms standard GRPO and a recent RL baseline across all three backbones, and on Qwen3-VL-8B-Instruct even surpasses substantially larger medical MLLMs like HuatuoGPT-Vision-34B by 2.79 points using only 13K training samples. On step-wise reasoning analysis, MRPO breaks failure cascades by reducing early-stage reasoning failures from 64.0% to 13.0%, showing that targeted mitigation of early failures improves both reasoning quality and final answer accuracy.
+- On out-of-distribution medical VQA benchmarks, MRPO consistently outperforms standard GRPO and a recent RL baseline across all three backbones, and on Qwen3-VL-8B-Thinking even surpasses substantially larger medical MLLMs like HuatuoGPT-Vision-34B by 4.59 points using only 13K training samples. On step-wise reasoning analysis, MRPO breaks failure cascades by reducing early-stage reasoning failures from 58.6% to 13.4%, showing that targeted mitigation of early failures improves both reasoning quality and final answer accuracy.
 
 
 ### Answer Accuracy Comparison
@@ -129,7 +130,7 @@ python Eval_code/Reasoning_Evaluation.py \
 
 
 ## Contact
-Feel free to reach out to goodjungjun@korea.ac.kr or wjdalsquf@gmail.com
+Feel free to reach out to goodjungjun@korea.ac.kr
 
 BibTeX Citation: If you use MRPO in your research, please cite it using the following BibTeX entry:
 
