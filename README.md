@@ -1,4 +1,4 @@
-# Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning
+# [EMNLP 2026] Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning
 
 <p align="left">
   <a href="https://arxiv.org/abs/2606.31825" target="_blank"><img src="https://img.shields.io/badge/arXiv-2606.31825-red"></a>
