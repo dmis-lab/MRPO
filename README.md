@@ -8,7 +8,7 @@
 
 
 ### News
-* [August/21/2026] 🎉 MRPO is accepted to EMNLP 2026! Congrats to all the authors!.
+* [August/21/2026] 🎉 MRPO is accepted to EMNLP 2026! Congrats to all the authors!
 * [June/30/2026] 🎉 We release our paper "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning" on arXiv.
 
 
