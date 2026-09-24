@@ -19,7 +19,7 @@
 ![alt text](assets/MRPO_overview.png)
 
 ## Key Results
-- On out-of-distribution medical VQA benchmarks, MRPO consistently outperforms standard GRPO and a recent RL baseline across all three backbones, and on Qwen3-VL-8B-Thinking even surpasses substantially larger medical MLLMs like HuatuoGPT-Vision-34B by 4.59 points using only 13K training samples. On step-wise reasoning analysis, MRPO breaks failure cascades by reducing early-stage reasoning failures from 58.6% to 13.4%, showing that targeted mitigation of early failures improves both reasoning quality and final answer accuracy.
+- On out-of-distribution medical VQA benchmarks, MRPO consistently outperforms standard GRPO and a recent RL baseline across all four backbones, and on Qwen3-VL-8B-Thinking even surpasses substantially larger medical MLLMs like HuatuoGPT-Vision-34B by 4.59 points using only 13K training samples. On step-wise reasoning analysis, MRPO breaks failure cascades by reducing early-stage reasoning failures from 58.6% to 13.4%, showing that targeted mitigation of early failures improves both reasoning quality and final answer accuracy.
 
 
 ### Answer Accuracy Comparison
